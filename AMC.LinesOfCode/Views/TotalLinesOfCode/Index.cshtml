@@ -1,0 +1,42 @@
+﻿@model AMC.LinesOfCode.Models.TotalLinesOfCodeModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+@using (Html.BeginForm("LinesOfCode", "TotalLinesOfCode", new { FileDirectory = @Model.FileDirectory },FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken() 
+    
+    <div class="form-horizontal">
+        <h4>Total Lines Of CodeModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <fieldset>
+                
+                <div>
+                    <p>
+                        File Directory
+                        @Html.TextBoxFor(model => model.FileDirectory)
+                        <input type="submit" value="CountLines" class="btn btn-primary" />
+                    </p>
+                </div>
+            </fieldset>
+            <br />
+           
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
