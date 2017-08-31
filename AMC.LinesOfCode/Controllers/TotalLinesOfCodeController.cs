@@ -39,7 +39,7 @@ namespace AMC.LinesOfCode.Controllers
             }
                 model.TotalLinesOfCode = _repository.GetCountOfTotalLinesOfCode(path);
                 model.TotalFilesProccessed = _repository.GetTotalFilesProcessed(path);
-                model.TotalFilesContainCode = _repository.GetTotalFilesProcessed(path);
+                model.TotalFilesContainCode = _repository.GetTotalNumberOfFilesContainsCode();
 
             return View(model);
         }
