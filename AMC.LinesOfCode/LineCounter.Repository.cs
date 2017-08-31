@@ -13,7 +13,6 @@ namespace AMC.LinesOfCode
         {
            
         }
-
         public DirectoryInfo _directoryInfo;
         public int totalFilesProcessed;
         public int totalNoOfFilesContainsCode;
@@ -76,7 +75,5 @@ namespace AMC.LinesOfCode
             {
                  return totalNoOfFilesContainsCode;
             }
-
-       
-            }
+        }
 }
